@@ -1,11 +1,15 @@
 import type { ITechnology } from "../../types/technology";
-import { use } from "react";
+import { use, useState } from "react";
 import TechnologyCard from "./TechnologyCard/TechnologyCard";
 interface TechnologySectionProps {
   technologyPromise: Promise<ITechnology[]>;
 }
 const TechnologySection = ({ technologyPromise }: TechnologySectionProps) => {
   const technologies = use(technologyPromise);
+  const [stack, setStack] = useState<ITechnology[]>([]);
+  const addToStack = (technology: ITechnology) => {
+    setStack([...stack, technology]);
+  };
   return (
     <section className="container mx-auto py-16">
       <div className="mb-10">
@@ -21,12 +25,26 @@ const TechnologySection = ({ technologyPromise }: TechnologySectionProps) => {
         <div className="col-span-3">
           <div className="grid grid-cols-3 gap-4">
             {technologies.map((technology) => (
-              <TechnologyCard key={technology.name} technology={technology} />
+              <TechnologyCard
+                key={technology.name}
+                technology={technology}
+                addToStack={addToStack}
+              ></TechnologyCard>
             ))}
           </div>
         </div>
 
-        <div className="col-span-1">{/* Your Stack */}</div>
+        <div className="col-span-1 rounded-xl border border-gray-200 bg-white p-5 shadow-sm">
+          <h3 className="text-xl font-semibold">Your Stack</h3>
+
+          <p className="mt-1 text-sm text-gray-400">
+            {stack.length} Technologies Selected
+          </p>
+
+          <div className="mt-4 flex h-14 items-center justify-center rounded-xl border border-dashed border-gray-200">
+            <p className="text-sm text-gray-400">Your stack is empty.</p>
+          </div>
+        </div>
       </div>
     </section>
   );

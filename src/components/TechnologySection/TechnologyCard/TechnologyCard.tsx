@@ -7,7 +7,6 @@ import {
   SiNextdotjs,
   SiNodedotjs,
   SiPostgresql,
-  SiRedis,
   SiJavascript,
   SiTypescript,
   SiTailwindcss,
@@ -15,9 +14,10 @@ import {
 } from "react-icons/si";
 interface TechnologyCardProps {
   technology: ITechnology;
+  addToStack: (technology: ITechnology) => void;
 }
 
-const TechnologyCard = ({ technology }: TechnologyCardProps) => {
+const TechnologyCard = ({ technology, addToStack }: TechnologyCardProps) => {
   return (
     <div className="rounded-xl border border-gray-200 bg-white p-4 shadow-sm">
       <div className="text-3xl">
@@ -87,7 +87,9 @@ const TechnologyCard = ({ technology }: TechnologyCardProps) => {
         <span>⭐ {technology.rating}</span>
       </div>
 
-      <button className="mt-4 w-full rounded-lg bg-gray-900 py-2 text-sm font-medium text-white">
+      <button
+        onClick={() => addToStack(technology)}
+        className="mt-4 w-full rounded-lg bg-gray-900 py-2 text-sm font-medium text-white">
         Add to Stack
       </button>
     </div>

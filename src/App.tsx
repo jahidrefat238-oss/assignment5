@@ -1,7 +1,7 @@
 import Hero from "./components/Hero/Hero";
 import Navbar from "./components/Navbar/Navbar";
 import TechnologySection from "./components/TechnologySection/TechnologySection";
-
+import { Suspense } from "react";
 const getTechnologies = async () => {
   const response = await fetch("/data.json");
   const data = await response.json();
@@ -14,8 +14,9 @@ function App() {
     <div>
       <Navbar></Navbar>
       <Hero></Hero>
-      <TechnologySection technologyPromise={technologyPromise}></TechnologySection>
-      
+      <Suspense fallback={<p>Loading...</p>}>
+        <TechnologySection technologyPromise={technologyPromise} />
+      </Suspense>
     </div>
   );
 }
