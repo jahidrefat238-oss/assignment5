@@ -10,6 +10,9 @@ const TechnologySection = ({ technologyPromise }: TechnologySectionProps) => {
   const addToStack = (technology: ITechnology) => {
     setStack([...stack, technology]);
   };
+  const removeFromStack = (technologyName: string) => {
+    setStack(stack.filter((technology) => technology.name !== technologyName));
+  };
   return (
     <section className="container mx-auto py-16">
       <div className="mb-10">
@@ -43,12 +46,21 @@ const TechnologySection = ({ technologyPromise }: TechnologySectionProps) => {
           {stack.map((technology) => (
             <div
               key={technology.name}
-              className="mt-3 rounded-lg border border-gray-200 p-3"
+              className="mt-3 flex items-center justify-between rounded-xl border border-gray-200 p-3"
             >
-              <h4 className="font-medium">{technology.name}</h4>
-              <p className="mt-1 text-xs text-gray-500">
-                {technology.category}
-              </p>
+              <div>
+                <h4 className="font-medium">{technology.name}</h4>
+                <p className="mt-1 text-xs text-gray-500">
+                  {technology.category}
+                </p>
+              </div>
+
+              <button
+                onClick={() => removeFromStack(technology.name)}
+                className="mt-2 text-xs text-red-500"
+              >
+                Remove
+              </button>
             </div>
           ))}
           {stack.length === 0 && (
