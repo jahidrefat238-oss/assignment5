@@ -1,23 +1,28 @@
 import type { ITechnology } from "../../../types/technology";
 import TechnologyIcon from "../TechnologyIcon";
+import TechnologyBadge from "../TechnologyBadge";
 interface TechnologyCardProps {
   technology: ITechnology;
   addToStack: (technology: ITechnology) => void;
   isSelected: boolean;
 }
 
-const TechnologyCard = ({ technology, addToStack ,isSelected}: TechnologyCardProps) => {
+const TechnologyCard = ({
+  technology,
+  addToStack,
+  isSelected,
+}: TechnologyCardProps) => {
   return (
-    <div className={`rounded-xl border bg-white p-4 shadow-sm ${
-    isSelected ? "border-gray-200" : "border-orange-400"
-  }`}>
+    <div
+      className={`rounded-xl border bg-white p-4 shadow-sm ${
+        isSelected ? "border-gray-200" : "border-orange-400"
+      }`}
+    >
       <TechnologyIcon technology={technology} />
       <div className="flex items-center justify-between">
         <h3 className="text-lg font-semibold">{technology.name}</h3>
 
-        <span className="rounded-full bg-green-50 px-3 py-1 text-xs text-green-600">
-          {technology.badge}
-        </span>
+        <TechnologyBadge technology={technology}></TechnologyBadge>
       </div>
 
       <p className="mt-3 text-sm leading-relaxed text-gray-500">

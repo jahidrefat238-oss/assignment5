@@ -2,16 +2,15 @@ import logo from "../../assets/B14-A05-DevStack/assets/logo-text.png";
 
 const Footer = () => {
   return (
-    <footer className="border-t border-gray-200 bg-white">
+    <footer className=" bg-white">
       <div className="container mx-auto py-10">
         <div className="grid grid-cols-[2fr_1fr_1fr_1fr] gap-12">
-
-        
           <div>
             <img src={logo} alt="Dev Stack" className="h-10" />
 
             <p className="mt-6 max-w-md text-sm leading-6 text-[#64748B]">
-              Curated tools, technologies, and resources for developers building <br></br>modern software.
+              Curated tools, technologies, and resources for developers building{" "}
+              <br></br>modern software.
             </p>
 
             <div className="mt-8 flex gap-6 text-sm font-medium text-[#475569]">
@@ -21,7 +20,6 @@ const Footer = () => {
             </div>
           </div>
 
-    
           <div>
             <h3 className="font-semibold uppercase tracking-wide text-[#111827]">
               Product
@@ -34,7 +32,6 @@ const Footer = () => {
             </div>
           </div>
 
-        
           <div>
             <h3 className="font-semibold uppercase tracking-wide text-[#111827]">
               Company
@@ -47,7 +44,6 @@ const Footer = () => {
             </div>
           </div>
 
-          
           <div>
             <h3 className="font-semibold uppercase tracking-wide text-[#111827]">
               Legal
@@ -58,10 +54,8 @@ const Footer = () => {
               <a href="#">Terms of Service</a>
             </div>
           </div>
-
         </div>
 
-        
         <div className="mt-20 flex items-center justify-between border-t border-gray-200 pt-10 text-sm text-[#94A3B8]">
           <p>© 2026 Dev Stack. All rights reserved.</p>
 
