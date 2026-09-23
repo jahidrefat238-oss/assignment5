@@ -1,4 +1,8 @@
-const TechnologySection = () => {
+import type { ITechnology } from "../../types/technology";
+interface TechnologySectionProps {
+  technologyPromise: Promise<ITechnology[]>;
+}
+const TechnologySection = ({ technologyPromise }: TechnologySectionProps) => {
   return (
     <section className="container mx-auto py-16">
       <div className="mb-10">
@@ -12,14 +16,10 @@ const TechnologySection = () => {
       </div>
       <div className="grid grid-cols-4 gap-5">
         <div className="col-span-3">
-          <div className="grid grid-cols-3 gap-4">
-            {/* Technology cards */}
-            </div>
+          <div className="grid grid-cols-3 gap-4">{/* Technology cards */}</div>
         </div>
 
-        <div className="col-span-1">
-            {/* Your Stack */}
-            </div>
+        <div className="col-span-1">{/* Your Stack */}</div>
       </div>
     </section>
   );
