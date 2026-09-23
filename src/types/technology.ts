@@ -1,7 +1,8 @@
 export interface ITechnology {
+  id: string;
   name: string;
   category: string;
-  level: string;
+  difficulty: string;
   rating: number;
   badge: string;
   description: string;

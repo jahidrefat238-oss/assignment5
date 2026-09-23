@@ -16,7 +16,7 @@ const Navbar = () => {
           Technologies
         </a>
         <a className=" hover:bg-gray-400" href="#">
-          Project
+          Projects
         </a>
         <a className=" hover:bg-gray-400 " href="#">
           About
@@ -28,7 +28,10 @@ const Navbar = () => {
       {/* right side */}
       <div className="flex items-center gap-5 font-[10px]">
         <button>Sign In</button>
-        <button className="rounded-[15px] bg-[#D91B7E] px-3 py-0.5">
+        <button
+          style={{ backgroundImage: "var(--brand-gradient)" }}
+          className="rounded-full px-5 py-2 text-sm font-medium text-white"
+        >
           Sign Up
         </button>
       </div>

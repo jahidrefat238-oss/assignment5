@@ -8,7 +8,10 @@ const Hero = () => {
         <h1 className="text-5xl font-bold ">
           Build Your
           <br />
-          <span className="bg-gradient-to-r from-orange-500 to-pink-500 bg-clip-text text-transparent">
+          <span
+            className="bg-clip-text text-transparent"
+            style={{ backgroundImage: "var(--brand-gradient)" }}
+          >
             Development Stack
           </span>
         </h1>
@@ -21,7 +24,10 @@ const Hero = () => {
         </p>
 
         <div className="flex gap-4">
-          <button className="rounded-lg bg-gradient-to-r from-orange-500 to-pink-500 px-6 py-3 font-medium text-white">
+          <button
+            style={{ backgroundImage: "var(--brand-gradient)" }}
+            className="rounded-lg px-6 py-3 font-medium text-white"
+          >
             Explore Technologies
           </button>
           <button className="rounded-lg border border-gray-300 px-6 py-3 font-medium text-gray-700">

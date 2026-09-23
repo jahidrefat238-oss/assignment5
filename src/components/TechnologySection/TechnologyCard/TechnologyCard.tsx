@@ -34,16 +34,21 @@ const TechnologyCard = ({
           {technology.category}
         </span>
 
-        <span>{technology.level}</span>
+        <span>{technology.difficulty}</span>
 
         <span>⭐ {technology.rating}</span>
       </div>
 
       <button
         onClick={() => addToStack(technology)}
-        className="mt-4 w-full rounded-lg bg-gray-900 py-2 text-sm font-medium text-white transition cursor-pointer hover:bg-gray-700"
+        disabled={isSelected}
+        className={`mt-4 w-full rounded-lg py-2 text-sm font-medium text-white transition ${
+          isSelected
+            ? "bg-gray-400"
+            : "cursor-pointer bg-gray-900 hover:bg-gray-700"
+        }`}
       >
-        Add to Stack
+        {isSelected ? "✓ Added to Stack" : "Add to Stack"}
       </button>
     </div>
   );

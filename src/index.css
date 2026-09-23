@@ -1,1 +1,4 @@
 @import "tailwindcss";
+:root {
+  --brand-gradient: linear-gradient(to right, #f97316, #ec4899, #8b5cf6);
+}
