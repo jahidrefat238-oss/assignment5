@@ -47,6 +47,7 @@ const TechnologySection = ({ technologyPromise }: TechnologySectionProps) => {
                 key={technology.name}
                 technology={technology}
                 addToStack={addToStack}
+                isSelected={stack.some((item) => item.name === technology.name)}
               ></TechnologyCard>
             ))}
           </div>
@@ -67,7 +68,7 @@ const TechnologySection = ({ technologyPromise }: TechnologySectionProps) => {
                 <TechnologyIcon technology={technology} />
                 <div>
                   <h4 className="font-medium">{technology.name}</h4>
-                  <p className="mt-1 text-xs text-gray-500">
+                  <p className="mt-1 text-lg text-gray-500">
                     {technology.category}
                   </p>
                 </div>

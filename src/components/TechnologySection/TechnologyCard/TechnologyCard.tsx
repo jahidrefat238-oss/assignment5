@@ -3,11 +3,14 @@ import TechnologyIcon from "../TechnologyIcon";
 interface TechnologyCardProps {
   technology: ITechnology;
   addToStack: (technology: ITechnology) => void;
+  isSelected: boolean;
 }
 
-const TechnologyCard = ({ technology, addToStack }: TechnologyCardProps) => {
+const TechnologyCard = ({ technology, addToStack ,isSelected}: TechnologyCardProps) => {
   return (
-    <div className="rounded-xl border border-gray-200 bg-white p-4 shadow-sm">
+    <div className={`rounded-xl border bg-white p-4 shadow-sm ${
+    isSelected ? "border-gray-200" : "border-orange-400"
+  }`}>
       <TechnologyIcon technology={technology} />
       <div className="flex items-center justify-between">
         <h3 className="text-lg font-semibold">{technology.name}</h3>
