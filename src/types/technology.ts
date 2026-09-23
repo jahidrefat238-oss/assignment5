@@ -5,4 +5,5 @@ export interface ITechnology {
   rating: number;
   badge: string;
   description: string;
+  icon: string;
 }

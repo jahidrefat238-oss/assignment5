@@ -1,5 +1,5 @@
 import type { ITechnology } from "../../../types/technology";
-
+import { SiReact } from "react-icons/si";
 interface TechnologyCardProps {
   technology: ITechnology;
 }
@@ -7,7 +7,10 @@ interface TechnologyCardProps {
 const TechnologyCard = ({ technology }: TechnologyCardProps) => {
   return (
     <div className="rounded-xl border border-gray-200 bg-white p-4 shadow-sm">
-      {/* Card Header */}
+      <div className="text-3xl">
+        <SiReact />
+      </div>
+
       <div className="flex items-center justify-between">
         <h3 className="text-lg font-semibold">{technology.name}</h3>
 
