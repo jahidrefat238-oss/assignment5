@@ -32,7 +32,7 @@ const Hero = () => {
 
       {/* Right Side */}
       <div>
-        <img src={hero_Image} alt="Dev Stack" />
+        <img src={hero_Image} alt="" className="w-full max-w-[500px]" />
       </div>
     </section>
   );
