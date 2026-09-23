@@ -40,10 +40,22 @@ const TechnologySection = ({ technologyPromise }: TechnologySectionProps) => {
           <p className="mt-1 text-sm text-gray-400">
             {stack.length} Technologies Selected
           </p>
-
-          <div className="mt-4 flex h-14 items-center justify-center rounded-xl border border-dashed border-gray-200">
-            <p className="text-sm text-gray-400">Your stack is empty.</p>
-          </div>
+          {stack.map((technology) => (
+            <div
+              key={technology.name}
+              className="mt-3 rounded-lg border border-gray-200 p-3"
+            >
+              <h4 className="font-medium">{technology.name}</h4>
+              <p className="mt-1 text-xs text-gray-500">
+                {technology.category}
+              </p>
+            </div>
+          ))}
+          {stack.length === 0 && (
+            <div className="mt-4 flex h-14 items-center justify-center rounded-xl border border-dashed border-gray-200">
+              <p className="text-sm text-gray-400">Your stack is empty.</p>
+            </div>
+          )}
         </div>
       </div>
     </section>
