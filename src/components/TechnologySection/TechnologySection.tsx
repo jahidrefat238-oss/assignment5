@@ -23,7 +23,7 @@ const TechnologySection = ({ technologyPromise }: TechnologySectionProps) => {
     toast.info("All technologies removed from your stack");
   };
   return (
-    <section className="container mx-auto py-16">
+    <section className="mx-auto w-full max-w-7xl px-6  py-10">
       <div className="mb-10">
         <h2 className="text-3xl font-bold">
           Explore The <span className="text-[#EC4899]">Technologies</span>

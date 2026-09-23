@@ -2,7 +2,7 @@ import hero_Image from "../../assets/B14-A05-DevStack/assets/banner-stack.png";
 
 const Hero = () => {
   return (
-    <section className="container mx-auto grid grid-cols-2 items-center">
+    <section className="mx-auto w-full max-w-7xl px-6 grid grid-cols-2 items-center">
       {/* Left Side */}
       <div>
         <h1 className="text-5xl font-bold ">

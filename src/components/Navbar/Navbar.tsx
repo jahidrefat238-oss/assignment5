@@ -2,7 +2,7 @@ import logo from "../../assets/B14-A05-DevStack/assets/logo-text.png";
 
 const Navbar = () => {
   return (
-    <nav className=" container mx-auto flex items-center justify-between pt-5 sticky top-0 z-50 bg-white">
+    <nav className=" mx-auto flex w-full max-w-7xl px-6 items-center justify-between pt-5 sticky top-0 z-50 bg-white">
       {/* left side */}
       <div className="flex items-center ">
         <img src={logo} alt="nav logo" />

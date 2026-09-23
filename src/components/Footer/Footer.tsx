@@ -3,7 +3,7 @@ import logo from "../../assets/B14-A05-DevStack/assets/logo-text.png";
 const Footer = () => {
   return (
     <footer className=" bg-white">
-      <div className="container mx-auto py-10">
+      <div className="mx-auto w-full max-w-7xl px-6 py-10">
         <div className="grid grid-cols-[2fr_1fr_1fr_1fr] gap-12">
           <div>
             <img src={logo} alt="Dev Stack" className="h-10" />
@@ -56,7 +56,7 @@ const Footer = () => {
           </div>
         </div>
 
-        <div className="mt-20 flex items-center justify-between border-t border-gray-200 pt-10 text-sm text-[#94A3B8]">
+        <div className="mt-20 flex items-center justify-between pt-10 text-sm text-[#94A3B8]">
           <p>© 2026 Dev Stack. All rights reserved.</p>
 
           <div className="flex gap-6">
