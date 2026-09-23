@@ -1,17 +1,5 @@
 import type { ITechnology } from "../../../types/technology";
-import { FaJava } from "react-icons/fa";
-import {
-  SiReact,
-  SiVuedotjs,
-  SiSvelte,
-  SiNextdotjs,
-  SiNodedotjs,
-  SiPostgresql,
-  SiJavascript,
-  SiTypescript,
-  SiTailwindcss,
-  SiDocker,
-} from "react-icons/si";
+import TechnologyIcon from "../TechnologyIcon";
 interface TechnologyCardProps {
   technology: ITechnology;
   addToStack: (technology: ITechnology) => void;
@@ -20,51 +8,7 @@ interface TechnologyCardProps {
 const TechnologyCard = ({ technology, addToStack }: TechnologyCardProps) => {
   return (
     <div className="rounded-xl border border-gray-200 bg-white p-4 shadow-sm">
-      <div className="text-3xl">
-        {technology.name === "React" && <SiReact className="text-[#61DAFB]" />}
-
-        {technology.name === "Vue.js" && (
-          <SiVuedotjs className="text-[#4FC08D]" />
-        )}
-
-        {technology.name === "Svelte" && (
-          <SiSvelte className="text-[#FF3E00]" />
-        )}
-
-        {technology.name === "Next.js" && (
-          <SiNextdotjs className="text-black" />
-        )}
-
-        {technology.name === "Node.js" && (
-          <SiNodedotjs className="text-[#339933]" />
-        )}
-
-        {technology.name === "PostgreSQL" && (
-          <SiPostgresql className="text-[#4169E1]" />
-        )}
-
-        {technology.name === "Redis" && (
-          <img src="/redis_logo.png" alt="Redis" className="h-12 w-15" />
-        )}
-
-        {technology.name === "JavaScript" && (
-          <SiJavascript className="text-[#F7DF1E]" />
-        )}
-
-        {technology.name === "TypeScript" && (
-          <SiTypescript className="text-[#3178C6]" />
-        )}
-
-        {/* {technology.name === "Java" && <SiJava className="text-[#ED8B00]" />} */}
-        {technology.name === "Java" && <FaJava className="text-[#ED8B00]" />}
-        {technology.name === "Tailwind CSS" && (
-          <SiTailwindcss className="text-[#06B6D4]" />
-        )}
-
-        {technology.name === "Docker" && (
-          <SiDocker className="text-[#2496ED]" />
-        )}
-      </div>
+      <TechnologyIcon technology={technology} />
       <div className="flex items-center justify-between">
         <h3 className="text-lg font-semibold">{technology.name}</h3>
 
@@ -89,7 +33,8 @@ const TechnologyCard = ({ technology, addToStack }: TechnologyCardProps) => {
 
       <button
         onClick={() => addToStack(technology)}
-        className="mt-4 w-full rounded-lg bg-gray-900 py-2 text-sm font-medium text-white">
+        className="mt-4 w-full rounded-lg bg-gray-900 py-2 text-sm font-medium text-white"
+      >
         Add to Stack
       </button>
     </div>

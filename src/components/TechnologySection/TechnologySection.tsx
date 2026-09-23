@@ -1,6 +1,8 @@
 import type { ITechnology } from "../../types/technology";
 import { use, useState } from "react";
 import TechnologyCard from "./TechnologyCard/TechnologyCard";
+import { IoClose } from "react-icons/io5";
+import TechnologyIcon from "./TechnologyIcon";
 interface TechnologySectionProps {
   technologyPromise: Promise<ITechnology[]>;
 }
@@ -48,18 +50,21 @@ const TechnologySection = ({ technologyPromise }: TechnologySectionProps) => {
               key={technology.name}
               className="mt-3 flex items-center justify-between rounded-xl border border-gray-200 p-3"
             >
-              <div>
-                <h4 className="font-medium">{technology.name}</h4>
-                <p className="mt-1 text-xs text-gray-500">
-                  {technology.category}
-                </p>
+              <div className="flex items-center gap-3">
+                <TechnologyIcon technology={technology} />
+                <div>
+                  <h4 className="font-medium">{technology.name}</h4>
+                  <p className="mt-1 text-xs text-gray-500">
+                    {technology.category}
+                  </p>
+                </div>
               </div>
 
               <button
                 onClick={() => removeFromStack(technology.name)}
-                className="mt-2 text-xs text-red-500"
+                className="text-gray-400 hover:text-gray-600"
               >
-                Remove
+                <IoClose />
               </button>
             </div>
           ))}
