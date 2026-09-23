@@ -10,10 +10,19 @@ const TechnologySection = ({ technologyPromise }: TechnologySectionProps) => {
   const technologies = use(technologyPromise);
   const [stack, setStack] = useState<ITechnology[]>([]);
   const addToStack = (technology: ITechnology) => {
+    const alreadyAdded = stack.some((item) => item.name === technology.name);
+
+    if (alreadyAdded) {
+      return;
+    }
+
     setStack([...stack, technology]);
   };
   const removeFromStack = (technologyName: string) => {
     setStack(stack.filter((technology) => technology.name !== technologyName));
+  };
+  const removeAllFromStack = () => {
+    setStack([]);
   };
   return (
     <section className="container mx-auto py-16">
@@ -68,6 +77,14 @@ const TechnologySection = ({ technologyPromise }: TechnologySectionProps) => {
               </button>
             </div>
           ))}
+          {stack.length > 0 && (
+            <button
+              onClick={removeAllFromStack}
+              className="mt-4 w-full rounded-lg border border-gray-300 py-2 text-sm font-medium text-gray-600"
+            >
+              Remove All
+            </button>
+          )}
           {stack.length === 0 && (
             <div className="mt-4 flex h-14 items-center justify-center rounded-xl border border-dashed border-gray-200">
               <p className="text-sm text-gray-400">Your stack is empty.</p>
