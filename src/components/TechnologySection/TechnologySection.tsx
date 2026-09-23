@@ -11,12 +11,6 @@ const TechnologySection = ({ technologyPromise }: TechnologySectionProps) => {
   const technologies = use(technologyPromise);
   const [stack, setStack] = useState<ITechnology[]>([]);
   const addToStack = (technology: ITechnology) => {
-    const alreadyAdded = stack.some((item) => item.name === technology.name);
-
-    if (alreadyAdded) {
-      toast.error(`${technology.name} is already in your stack`);
-      return;
-    }
     setStack([...stack, technology]);
     toast.success(`${technology.name} added to your stack`);
   };

@@ -91,9 +91,8 @@ Example:
 
 6. What is conditional rendering? Show one place you used it.
 
-Conditional rendering মানে হলো কোনো condition-এর উপর ভিত্তি করে UI-এর কোনো অংশ show বা hide করা।
+Conditional rendering মানে হলো কোনো condition-এর ওপর ভিত্তি করে UI-এর ভিন্ন অংশ দেখানো। আমাদের project-এর Your Stack section-এ এটি ব্যবহার করেছি। যখন stack empty থাকে, তখন “Your Stack is Empty” message দেখায়। আর যখন কোনো technology add করা হয়, তখন সেই selected technology-গুলোর list দেখায়।
 
-এই project-এ Stack.tsx file-এ stack empty থাকলে empty message দেখানোর জন্য conditional rendering ব্যবহার করেছি।
 
 Example:
 
