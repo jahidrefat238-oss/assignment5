@@ -33,7 +33,7 @@ const TechnologyCard = ({ technology, addToStack }: TechnologyCardProps) => {
 
       <button
         onClick={() => addToStack(technology)}
-        className="mt-4 w-full rounded-lg bg-gray-900 py-2 text-sm font-medium text-white"
+        className="mt-4 w-full rounded-lg bg-gray-900 py-2 text-sm font-medium text-white transition cursor-pointer hover:bg-gray-700"
       >
         Add to Stack
       </button>

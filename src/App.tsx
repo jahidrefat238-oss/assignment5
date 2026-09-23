@@ -2,6 +2,7 @@ import Hero from "./components/Hero/Hero";
 import Navbar from "./components/Navbar/Navbar";
 import TechnologySection from "./components/TechnologySection/TechnologySection";
 import { Suspense } from "react";
+import { ToastContainer } from "react-toastify";
 const getTechnologies = async () => {
   const response = await fetch("/data.json");
   const data = await response.json();
@@ -17,6 +18,7 @@ function App() {
       <Suspense fallback={<p>Loading...</p>}>
         <TechnologySection technologyPromise={technologyPromise} />
       </Suspense>
+       <ToastContainer></ToastContainer>
     </div>
   );
 }

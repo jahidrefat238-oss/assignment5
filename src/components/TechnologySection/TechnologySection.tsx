@@ -3,6 +3,7 @@ import { use, useState } from "react";
 import TechnologyCard from "./TechnologyCard/TechnologyCard";
 import { IoClose } from "react-icons/io5";
 import TechnologyIcon from "./TechnologyIcon";
+import { toast } from "react-toastify";
 interface TechnologySectionProps {
   technologyPromise: Promise<ITechnology[]>;
 }
@@ -13,16 +14,19 @@ const TechnologySection = ({ technologyPromise }: TechnologySectionProps) => {
     const alreadyAdded = stack.some((item) => item.name === technology.name);
 
     if (alreadyAdded) {
+      toast.error(`${technology.name} is already in your stack`);
       return;
     }
-
     setStack([...stack, technology]);
+    toast.success(`${technology.name} added to your stack`);
   };
   const removeFromStack = (technologyName: string) => {
     setStack(stack.filter((technology) => technology.name !== technologyName));
+    toast.info(`${technologyName} removed from your stack`);
   };
   const removeAllFromStack = () => {
     setStack([]);
+    toast.info("All technologies removed from your stack");
   };
   return (
     <section className="container mx-auto py-16">
@@ -71,7 +75,7 @@ const TechnologySection = ({ technologyPromise }: TechnologySectionProps) => {
 
               <button
                 onClick={() => removeFromStack(technology.name)}
-                className="text-gray-400 hover:text-gray-600"
+                className="text-gray-400 cursor-pointer hover:text-red-500"
               >
                 <IoClose />
               </button>
@@ -80,7 +84,7 @@ const TechnologySection = ({ technologyPromise }: TechnologySectionProps) => {
           {stack.length > 0 && (
             <button
               onClick={removeAllFromStack}
-              className="mt-4 w-full rounded-lg border border-gray-300 py-2 text-sm font-medium text-gray-600"
+              className="mt-4 w-full rounded-lg border border-orange-300 py-2 text-sm font-medium text-orange-600 cursor-pointer hover:bg-red-200"
             >
               Remove All
             </button>
